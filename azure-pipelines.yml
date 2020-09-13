@@ -54,18 +54,6 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
-- task: TfxInstaller@1
-  inputs:
-    version: 'v0.6.x'
-
-- task: PackageAzureDevOpsExtension@2
-  displayName: 'Package Extension: src/WorkItemMigrator.Extension'
-  inputs:
-    rootFolder: 'src/WorkItemMigrator.Extension'
-    outputPath: '$(Build.ArtifactStagingDirectory)\jira-devops-workitem-migrator-$(Build.BuildNumber).vsix'
-    updateTasksVersion: false
-    bypassLocalValidation: true
-
 - task: CopyFiles@2
   displayName: 'Copy JiraExport files'
   inputs:
